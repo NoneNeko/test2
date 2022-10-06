@@ -24,7 +24,7 @@ app.get("/GPA", (req,res) =>{
     })
 })
 
-app.get("highGPA", (req,res) =>{
+app.get("/highGPA", (req,res) =>{
     dataPrep.highGPA().then((data) =>{
         const highStudent = data;
         let resText = "<br>";
