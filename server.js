@@ -12,10 +12,10 @@ app.get("/", (req,res) => {
     res.sendFile(__dirname + "/views/home.html");
 });
 
-app.listen(HTTP_PORT, onHttpStart);
+
 
 app.get("/GPA", (req,res) =>{
-    dataPrep.prep().then((data) =>{
+    dataPrep.cpa().then((data) =>{
         const student = data;
         let resText = "<br>";
         resText = JSON.stringify(student) + "<br>";
@@ -23,4 +23,10 @@ app.get("/GPA", (req,res) =>{
     }).catch((err) =>{
         res.send("Message: ", err);
     })
+})
+
+dataPrep.prep().then(() =>{
+    app.listen(HTTP_PORT, onHttpStart);
+}).catch((err) =>{
+    console.log(err);
 })
