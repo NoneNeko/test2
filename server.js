@@ -1,5 +1,6 @@
 var express = require("express");
 var app = express();
+var dataPrep = require("./data_prep")
 
 var HTTP_PORT = process.env.Port || 8080;
 
@@ -12,3 +13,14 @@ app.get("/", (req,res) => {
 });
 
 app.listen(HTTP_PORT, onHttpStart);
+
+app.get("/GPA", (req,res) =>{
+    dataService.get().then((data) =>{
+        const student = data;
+        let resText = "<br>";
+        resText = JSON.stringify(student) + "<br>";
+        res.send(resText);
+    }).catch((err) =>{
+        res.send("Message: ", err);
+    })
+})
