@@ -9,7 +9,7 @@ let students = [];
 
 function prep(){
     return new Promise((resolve,reject) =>{
-        fs.readFile('./student.json,', (err,data)=>{
+        fs.readFile('./students.json',(err,data)=>{
             if(err)
             {
                 reject("Unable to read file.");
