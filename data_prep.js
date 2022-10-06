@@ -18,8 +18,8 @@ function prep(){
                 students=JSON.parse(data);
                 resolve();
             }
-        })
-    })
+        });
+    });
 }
 
 
