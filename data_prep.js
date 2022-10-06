@@ -37,7 +37,10 @@ function cpa(){
 
 function highGPA(){
     return new Promise((resolve, reject) =>{
-        let highest = Math.max(students.gpa);
+        let arr = students.map(object =>{
+            return object.gpa;
+        })
+        let highest = Math.max(arr);
         if (highest.length == 0)
         {
             reject("no result returned");
