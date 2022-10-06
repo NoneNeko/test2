@@ -27,7 +27,7 @@ app.get("/GPA", (req,res) =>{
 app.get("/highGPA", (req,res) =>{
     dataPrep.highGPA().then((data) =>{
         const highStudent = data;
-        let resText = "High GPA: " + JSON.stringify(highStudent) +"<br>"+ "Student ID: " +highStudent.studID;
+        let resText = "High GPA: " + JSON.stringify(highStudent) +"<br>"+ "Student ID: " +highStudent.name;
         res.send(resText);
     }).catch((err) =>{
         res.send("Message: ", err);
