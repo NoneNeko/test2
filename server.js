@@ -15,7 +15,7 @@ app.get("/", (req,res) => {
 app.listen(HTTP_PORT, onHttpStart);
 
 app.get("/GPA", (req,res) =>{
-    dataService.get().then((data) =>{
+    dataPrep.get().then((data) =>{
         const student = data;
         let resText = "<br>";
         resText = JSON.stringify(student) + "<br>";
